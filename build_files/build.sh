@@ -17,6 +17,11 @@ chmod 0755 /usr/local/bin/unityhub-bazzite
 # Install Unity & .NET SDK
 dnf5 install -y unityhub dotnet-sdk-10.0
 
+# Get our fixed Unity Hub .desktop file in-place
+install -Dm0644 \
+    /ctx/system_files/usr/share/applications/unityhub.desktop \
+    /usr/share/applications/unityhub.desktop
+
 # Use a COPR Example:
 #
 # dnf5 -y copr enable ublue-os/staging
