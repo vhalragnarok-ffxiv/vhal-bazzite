@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+APP_DIR="$HOME/.local/share/applications"
+changed=0
+
+[[ -d "$APP_DIR" ]] || exit 0
+
+for file in "$APP_DIR"/unityhub-unity-editor*.desktop; do
+    [[ -e "$file" ]] || continue
+
+    if grep -q '^NoDisplay=' "$file"; then
+        if ! grep -q '^NoDisplay=true$' "$file"; then
+            sed -i 's/^NoDisplay=.*/NoDisplay=true/' "$file"
+            changed=1
+        fi
+    else
+        printf '\nNoDisplay=true\n' >> "$file"
+        changed=1
+    fi
+done
+
+if (( changed )) && command -v kbuildsycoca6 >/dev/null 2>&1; then
+    kbuildsycoca6 --noincremental
+fi
