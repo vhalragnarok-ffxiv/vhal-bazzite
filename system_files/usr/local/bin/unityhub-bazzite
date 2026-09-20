@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-set -e
-
-REAL_HOME="$(readlink -f "$HOME")"
-
-exec env HOME="$REAL_HOME" /usr/bin/unityhub "$@"
