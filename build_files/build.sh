@@ -50,3 +50,4 @@ ln -sf \
 #### Example for enabling a System Unit File
 
 systemctl enable podman.socket
+systemctl enable vhal-flatpak-provision.service
