@@ -2,7 +2,7 @@
 Name=JetBrains Toolbox
 GenericName=JetBrains IDE Manager
 Comment=Install and manage JetBrains development tools
-Exec=/usr/local/bin/jetbrains-toolbox
+Exec=/usr/bin/jetbrains-toolbox
 Terminal=false
 Type=Application
 Icon=applications-development
