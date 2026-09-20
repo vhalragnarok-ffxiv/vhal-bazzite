@@ -1,0 +1,14 @@
+[Unit]
+Description=Provision Vhal Bazzite Flatpaks
+Wants=network-online.target
+After=network-online.target
+ConditionPathExists=!/var/lib/vhal-bazzite/gitfourchette-provisioned
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/mkdir -p /var/lib/vhal-bazzite
+ExecStart=/usr/bin/flatpak --system install -y --noninteractive flathub org.gitfourchette.gitfourchette
+ExecStart=/usr/bin/touch /var/lib/vhal-bazzite/gitfourchette-provisioned
+
+[Install]
+WantedBy=multi-user.target
