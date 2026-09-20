@@ -5,6 +5,8 @@ set -ouex pipefail
 # Copy the contents of system_files/ of the git repo to /
 cp -avf "/ctx/system_files"/. /
 
+chmod 0755 /usr/local/bin/unityhub-bazzite
+
 ### Install packages
 
 # Packages can be installed from any enabled yum repo on the image.
