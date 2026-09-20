@@ -22,8 +22,16 @@ concurrency:
 
 jobs:
   build_push:
-    name: Build and push image
+    name: Build and push ${{ matrix.image_name }}
     runs-on: ubuntu-26.04
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - image_name: vhal-bazzite
+            base_image: ghcr.io/ublue-os/bazzite:stable
+          - image_name: vhal-bazzite-nvidia
+            base_image: ghcr.io/ublue-os/bazzite-nvidia-open:stable
 
     permissions:
       contents: read
