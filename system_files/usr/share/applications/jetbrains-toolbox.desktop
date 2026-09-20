@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=JetBrains Toolbox
+GenericName=JetBrains IDE Manager
+Comment=Install and manage JetBrains development tools
+Exec=/usr/local/bin/jetbrains-toolbox
+Terminal=false
+Type=Application
+Icon=applications-development
+Categories=Development;
+StartupNotify=true
+Keywords=JetBrains;Toolbox;Rider;IDE;
