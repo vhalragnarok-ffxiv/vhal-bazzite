@@ -1,0 +1,6 @@
+[Unit]
+Description=Hide Unity Editor launchers from KDE application search
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/vhal-hide-unity-editor-launchers
