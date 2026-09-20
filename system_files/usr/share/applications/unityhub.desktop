@@ -2,7 +2,7 @@
 Name=Unity Hub
 GenericName=Unity Game Engine Manager
 Keywords=Unity;Hub;UnityHub;
-Exec=/usr/local/bin/unityhub-bazzite %U
+Exec=/usr/libexec/vhal-bazzite/unityhub-bazzite %U
 Terminal=false
 Type=Application
 Icon=unityhub
