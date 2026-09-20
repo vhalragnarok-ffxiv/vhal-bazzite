@@ -5,7 +5,9 @@ set -ouex pipefail
 # Copy the contents of system_files/ of the git repo to /
 cp -avf "/ctx/system_files"/. /
 
-chmod 0755 /usr/local/bin/unityhub-bazzite
+chmod 0755 \
+    /usr/local/bin/unityhub-bazzite \
+    /usr/local/bin/vhal-hide-unity-editor-launchers
 
 ### Install packages
 
