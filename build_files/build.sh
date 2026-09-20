@@ -6,8 +6,8 @@ set -ouex pipefail
 cp -avf "/ctx/system_files"/. /
 
 chmod 0755 \
-    /usr/local/bin/unityhub-bazzite \
-    /usr/local/bin/vhal-hide-unity-editor-launchers
+    /usr/libexec/vhal-bazzite/unityhub-bazzite \
+    /usr/libexec/vhal-bazzite/vhal-hide-unity-editor-launchers
 
 ### Install packages
 
