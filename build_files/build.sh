@@ -53,3 +53,4 @@ ln -sf \
 
 systemctl enable podman.socket
 systemctl enable vhal-flatpak-provision.service
+systemctl --global enable vhal-hide-unity-editor-launchers.path
