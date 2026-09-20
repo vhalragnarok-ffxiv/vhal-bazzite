@@ -25,23 +25,21 @@ install -Dm0644 \
     /usr/share/applications/unityhub.desktop
 
 #Jetbrains Toolbox!
-# Install latest JetBrains Toolbox
-mkdir -p /opt/jetbrains-toolbox
+mkdir -p /usr/lib/jetbrains-toolbox
 
 curl -fL --retry 3 \
     "https://data.services.jetbrains.com/products/download?code=TBA&platform=linux" \
     -o /tmp/jetbrains-toolbox.tar.gz
 
 tar -xzf /tmp/jetbrains-toolbox.tar.gz \
-    -C /opt/jetbrains-toolbox \
+    -C /usr/lib/jetbrains-toolbox \
     --strip-components=1
 
 rm -f /tmp/jetbrains-toolbox.tar.gz
 
 ln -sf \
-    /opt/jetbrains-toolbox/bin/jetbrains-toolbox \
-    /usr/local/bin/jetbrains-toolbox
-
+    /usr/lib/jetbrains-toolbox/bin/jetbrains-toolbox \
+    /usr/bin/jetbrains-toolbox
 # Use a COPR Example:
 #
 # dnf5 -y copr enable ublue-os/staging
