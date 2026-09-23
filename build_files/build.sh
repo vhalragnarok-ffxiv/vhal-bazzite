@@ -16,8 +16,8 @@ chmod 0755 \
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/43/x86_64/repoview/index.html&protocol=https&redirect=1
 
-# Install Unity & .NET SDK
-dnf5 install -y unityhub dotnet-sdk-10.0
+# Install Unity, .NET SDK, and CJK + Emoji Font
+dnf5 install -y unityhub dotnet-sdk-10.0 google-noto-color-emoji-fonts google-noto-sans-cjk-fonts
 
 # Get our fixed Unity Hub .desktop file in-place
 install -Dm0644 \
