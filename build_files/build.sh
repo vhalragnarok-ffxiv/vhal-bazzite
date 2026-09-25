@@ -9,6 +9,10 @@ chmod 0755 \
     /usr/libexec/vhal-bazzite/unityhub-bazzite \
     /usr/libexec/vhal-bazzite/vhal-hide-unity-editor-launchers
 
+#Brave Origin
+curl -fsSLo /etc/yum.repos.d/brave-browser.repo \
+    https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
+
 ### Install packages
 
 # Packages can be installed from any enabled yum repo on the image.
@@ -17,7 +21,7 @@ chmod 0755 \
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/43/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # Install Unity, .NET SDK, and CJK + Emoji Font
-dnf5 install -y unityhub dotnet-sdk-10.0 google-noto-color-emoji-fonts google-noto-sans-cjk-fonts
+dnf5 install -y unityhub dotnet-sdk-10.0 google-noto-color-emoji-fonts google-noto-sans-cjk-fonts brave-origin
 
 # Get our fixed Unity Hub .desktop file in-place
 install -Dm0644 \
