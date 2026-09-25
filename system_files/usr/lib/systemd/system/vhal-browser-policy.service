@@ -1,0 +1,12 @@
+[Unit]
+Description=vhal-bazzite browser policy
+Wants=bazzite-flatpak-manager.service
+After=bazzite-flatpak-manager.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/flatpak mask --system org.mozilla.firefox
+ExecStart=-/usr/bin/flatpak uninstall --system --noninteractive --assumeyes org.mozilla.firefox
+
+[Install]
+WantedBy=multi-user.target
