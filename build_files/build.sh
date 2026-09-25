@@ -9,6 +9,13 @@ chmod 0755 \
     /usr/libexec/vhal-bazzite/unityhub-bazzite \
     /usr/libexec/vhal-bazzite/vhal-hide-unity-editor-launchers
 
+# Allow image-baked RPMs such as Brave Origin to install into /opt.
+# Bazzite normally provides /opt as a symlink to /var/opt.
+if [ -L /opt ]; then
+    rm /opt
+    mkdir /opt
+fi
+
 #Brave Origin
 curl -fsSLo /etc/yum.repos.d/brave-browser.repo \
     https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
